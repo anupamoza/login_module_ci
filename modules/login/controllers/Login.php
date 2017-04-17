@@ -35,26 +35,28 @@ Class Login extends MX_Controller
     // Show login page
     public function index()
     {
-        $this->load_view('login_view');
+        $data = array('title' => 'Login');
+        $this->load_view('login_view', $data);
     }
 
     // Show registration page
     public function user_registration_show()
     {
-        $this->load_view('registration_form_view');
+        $data = array('title' => 'Sign Up');
+        $this->load_view('registration_form_view', $data);
     }
 
     // Validate and store registration data in database
     public function new_user_registration()
     {
-
+        $data = array('title' => 'Sign Up');
         // Check validation for user input in SignUp form
         $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
         $this->form_validation->set_rules('email_value', 'Email', 'trim|required|xss_clean');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
         if ($this->form_validation->run() == FALSE)
         {
-            $this->load_view('registration_form_view');
+            $this->load_view('registration_form_view', $data);
         } else
         {
             $data = array(
@@ -86,10 +88,12 @@ Class Login extends MX_Controller
         {
             if (isset($this->session->userdata['logged_in']))
             {
-                $this->load_view('login_dashboard');
+                $data = array('title' => 'Dashboard');
+                $this->load_view('login_dashboard', $data);
             } else
             {
-                $this->load_view('login_view');
+                $data = array('title' => 'Login');
+                $this->load_view('login_view', $data);
             }
         } else
         {
@@ -111,13 +115,15 @@ Class Login extends MX_Controller
                     );
                     // Add user data in session
                     $this->session->set_userdata('logged_in', $session_data);
-                    $this->load_view('login_dashboard');
+                    $data = array('title' => 'Dashboard');
+                    $this->load_view('login_dashboard', $data);
                 }
             } else
             {
                 $data = array(
                     'error_message' => 'Invalid Username or Password'
                 );
+                $data = array('title' => 'Login');
                 $this->load_view('login_view', $data);
             }
         }
@@ -139,7 +145,7 @@ Class Login extends MX_Controller
     // Load View
     public function load_view($view_name = '', $data = array())
     {
-        $this->load->view('header');
+        $this->load->view('header', $data);
         $this->load->view($view_name, $data);
         $this->load->view('footer');
     }
