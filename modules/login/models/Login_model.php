@@ -1,7 +1,9 @@
 <?php
 
 /**
- * Model : Login
+ * @author Anupam Oza <anupamoza90@gmail.com>
+ * @copyright (c) 2017, Anupam Oza
+ * @link http://localhost/login/
  */
 Class Login_Model extends CI_Model
 {

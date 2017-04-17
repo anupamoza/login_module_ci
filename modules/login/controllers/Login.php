@@ -3,9 +3,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * @author Anupam Oza <anupam.oza@tecogis.com>
+ * @author Anupam Oza <anupamoza90@gmail.com>
  * @copyright (c) 2017, Anupam Oza
- * @link http://192.168.9.24/plastindia/login/
+ * @link http://localhost/login/
  */
 //session_start(); //we need to start session in order to access it through CI
 
