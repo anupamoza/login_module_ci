@@ -44,6 +44,6 @@ if (isset($this->session->userdata['logged_in']))
         echo form_submit('submit', 'Sign Up');
         echo form_close();
         ?>
-        <a href="<?php echo site_url() . $this->uri->segment(1); ?> ">Login</a>
+        <a href="<?php echo site_url() . '/'.$this->uri->segment(1); ?> ">Login</a>
     </div>
 </div>

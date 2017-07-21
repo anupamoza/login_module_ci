@@ -43,7 +43,7 @@ if (isset($message_display))
         <label>Password :</label>
         <input type="password" name="password" id="password" placeholder="**********"/><br/><br />
         <input type="submit" value=" Login " name="submit"/><br />
-        <a href="<?php echo site_url(); ?>login/user_registration_show">Sign Up</a>
+        <a href="<?php echo site_url(); ?>/login/user_registration_show">Sign Up</a>
         <?php echo form_close(); ?>
     </div>
 </div>
